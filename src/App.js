@@ -4,6 +4,12 @@ import './App.css';
 const converter = require('number-to-words');
 const sa = ["AA", "BB", "CC", "DD", "EE", "FF", "XX", "YYY"];
 const time = ['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+const isOverFlowing = () => {
+  const p = $('#cal')
+  const el = $('#placeholder')
+  return (el.offset().top < p.offset().top) ||
+    (el.offset().top  + el.height() > p.offset().top  + p.height());
+};
 class App extends Component {
   constructor (props) {
     super(props);
@@ -12,6 +18,7 @@ class App extends Component {
     }
   }
   handlePlaceHolderClick (e) {
+    console.log('clicked', new Date());
     const placeholder = document.getElementById('placeholder');
     const mounted = !this.state.isMounted;
     this.setState({isMounted: mounted})
@@ -22,6 +29,7 @@ class App extends Component {
     }
   }
   handleMouseMove (e) {
+    console.log(isOverFlowing())
     if (!this.state.isMounted) {
       const placeholder = document.getElementById('placeholder');
       placeholder.style.display = 'block';
@@ -52,13 +60,14 @@ class App extends Component {
     return (
       <div className="app-container" id="cal">
         <div id="placeholder" onClick={this.handlePlaceHolderClick.bind(this)}>
-          <div onClick={this.handleIncrease.bind(this)}><i className="angle up icon white f20"></i></div>
-          <div onClick={this.handleDecrease.bind(this)}><i className="angle down icon white f20"></i></div>
+          <i className="angle up icon white f20" onClick={this.handleIncrease.bind(this)}></i>
+          <br/>
+          <i className="angle down icon white f20" onClick={this.handleDecrease.bind(this)}></i>
         </div>
         {
           time.map((a,i)=>{
             return (
-              <div className="ui grid" key={i}>
+              <div className="ui grid" key={i} style={{display: 'flex'}}>
                 {
                   sa.map((t,x )=>{
                     return (
