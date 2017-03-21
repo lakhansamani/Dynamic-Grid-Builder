@@ -1,0 +1,28 @@
+.app-container {
+  margin: auto;
+  width: 90%;
+  padding: 20px;
+}
+.app-grid {
+  border: 1px solid #dfdfdf;
+  height:100px;
+  position: relative;
+  z-index: 99;
+}
+#placeholder {
+  z-index: 100;
+  border: 1px solid #dfdfdf;
+  height:100px;
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+}
+.white {
+  color: #fff;
+}
+.f20 {
+  font-size: 20px !important;
+}
+.f20:hover {
+  cursor: pointer;
+}
