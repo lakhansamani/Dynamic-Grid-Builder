@@ -1,20 +1,30 @@
 {
   "name": "grid-maker",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "jquery": "^3.2.0",
-    "number-to-words": "^1.2.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
+  "bin": {
+    "grid-maker": "./src/Grid.js"
+  },
+  "author": "Lakhan Samani <lakhan.m.samani@gmail.com> (https://lakhansamani.github.io)",
+  "license": "ISC",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakhansamani/Dynamic-Grid-Builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lakhansamani/Dynamic-Grid-Builder.git/issues"
   }
 }
