@@ -1,6 +1,6 @@
 {
   "name": "grid-maker",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "dependencies": {
     "babel": "^6.23.0",
     "jquery": "^3.2.0",

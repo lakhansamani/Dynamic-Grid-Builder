@@ -18,6 +18,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var styles = '\n.appGrid {\n  border: 1px dotted #dfdfdf;\n  height:100px;\n  position: relative;\n  z-index: 99;\n}\n#placeholder {\n  z-index: 200;\n  border: 1px solid #dfdfdf;\n  height:100px;\n  display: none;\n  background: rgba(0, 0, 0, 0.6);\n  position: absolute;\n}\n.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {\n  padding: 0px !important;\n}\n.white {\n  color: #fff;\n}\n.f20 {\n  font-size: 20px !important;\n}\n.f20:hover {\n  cursor: pointer;\n}';
+
 var Grid = function (_React$Component) {
   _inherits(Grid, _React$Component);
 
@@ -89,6 +91,11 @@ var Grid = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'style',
+          null,
+          styles
+        ),
+        _react2.default.createElement(
           'div',
           null,
           _react2.default.createElement(
@@ -103,7 +110,7 @@ var Grid = function (_React$Component) {
               'div',
               { className: 'row', key: i, style: { display: 'flex' } },
               columns.map(function (t, x) {
-                return _react2.default.createElement('div', { key: x, className: 'col-lg-' + len + ' app-grid', onMouseMove: _this2.handleMouseMove.bind(_this2) });
+                return _react2.default.createElement('div', { key: x, className: 'col-lg-' + len + ' appGrid', onMouseMove: _this2.handleMouseMove.bind(_this2) });
               })
             );
           })
