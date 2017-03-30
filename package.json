@@ -1,12 +1,17 @@
 {
   "name": "grid-maker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
+    "babel": "^6.23.0",
     "jquery": "^3.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
     "react-scripts": "0.9.5"
   },
   "bin": {
@@ -18,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-component": "babel src/Grid.js -o index.js --presets=es2015,react"
   },
   "repository": {
     "type": "git",
