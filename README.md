@@ -2,6 +2,8 @@
 ReactJS Dynamic Grid component built using [Bootstrap](http://getbootstrap.com/) and [ReactJS](https://facebook.github.io/react/). Component has resizeable and repositionable placholder which can be used to perform various events on grid.
 
 * Include `bootstrap.css` in your `index.html` file
+* `npm install --save grid-maker`
+
 ```
 import Grid from 'grid-maker';
 import React from 'react';

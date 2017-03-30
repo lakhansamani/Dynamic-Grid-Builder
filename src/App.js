@@ -6,7 +6,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container" id="cal">
+      <div className="container">
       	<br/>
         <Grid />
       </div>

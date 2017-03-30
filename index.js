@@ -85,7 +85,7 @@ var Grid = function (_React$Component) {
       var len = Math.ceil(12 / columns.length);
       return _react2.default.createElement(
         'div',
-        null,
+        { id: 'cal' },
         _react2.default.createElement(
           'style',
           null,

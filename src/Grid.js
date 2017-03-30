@@ -75,7 +75,7 @@ class Grid extends React.Component {
     const columns = this.props.columns || [1,2,3,4,5,6];
     const len = Math.ceil(12/columns.length);
     return (
-      <div>
+      <div id="cal">
         <style>{styles}</style>
         <div>
           <div id="placeholder" onClick={this.handlePlaceHolderClick.bind(this)}>
