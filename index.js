@@ -70,8 +70,8 @@ var Grid = function (_React$Component) {
       e.stopPropagation();
       var placeholder = document.getElementById('placeholder');
       var placeholderHeight = placeholder.offsetHeight - 100;
-      var calHeight = document.getElementById('cal').offsetHeight;
-      if (placeholderHeight <= calHeight) {
+      console.log('placeholder height', placeholderHeight);
+      if (placeholderHeight >= 100) {
         placeholder.style.height = placeholderHeight + 'px';
       }
     }

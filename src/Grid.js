@@ -65,8 +65,8 @@ class Grid extends React.Component {
     e.stopPropagation();
     const placeholder = document.getElementById('placeholder');
     const placeholderHeight = placeholder.offsetHeight - 100;
-    const calHeight = document.getElementById('cal').offsetHeight;
-    if(placeholderHeight <= calHeight) {
+    console.log('placeholder height', placeholderHeight);
+    if(placeholderHeight >= 100) {
       placeholder.style.height = placeholderHeight+'px';
     }
   }
