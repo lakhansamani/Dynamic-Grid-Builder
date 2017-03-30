@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from "jquery";
 const styles = `
 .appGrid {
   border: 1px dotted #dfdfdf;
@@ -35,40 +34,40 @@ class Grid extends React.Component {
     }
   }
   handlePlaceHolderClick (e) {
-    const placeholder = $('#placeholder');
+    const placeholder = document.getElementById('placeholder');
     const mounted = !this.state.isMounted;
     this.setState({isMounted: mounted})
     if(mounted){
-      placeholder.css({background:'rgba(91,189,144,0.6)'});
+      placeholder.style.background = 'rgba(91,189,144,0.6)';
     } else {
-      placeholder.css({background: 'rgba(0, 0, 0, 0.6)'});
+      placeholder.style.background = 'rgba(0, 0, 0, 0.6)';
     }
   }
   handleMouseMove (e) {
     if (!this.state.isMounted) {
-      const placeholder = $('#placeholder');
-      placeholder.css({
-        display: 'block',
-        left: $(e.target).offset().left+'px',
-        top: $(e.target).offset().top+'px',
-        width: $(e.target).width()+1+'px',
-      });
+      const placeholder = document.getElementById('placeholder');
+      placeholder.style.display = 'block';
+      placeholder.style.left = e.target.offsetLeft+'px';
+      placeholder.style.top = e.target.offsetTop+'px';
+      placeholder.style.width = e.target.offsetWidth+'px';
     }
   }
   handleIncrease (e) {
     e.stopPropagation();
-    const placeholderHeight = $('#placeholder').height() + 100;
-    const calHeight = $('#cal').height();
+    const placeholder = document.getElementById('placeholder');
+    const placeholderHeight = placeholder.offsetHeight + 100;
+    const calHeight = document.getElementById('cal').offsetHeight;
     if(placeholderHeight <= calHeight) {
-      $('#placeholder').height(placeholderHeight);
+      placeholder.style.height = placeholderHeight+'px';
     }
   }
   handleDecrease (e) {
     e.stopPropagation();
-    const placeholderHeight = $('#placeholder').height()-100;
-    const calHeight = 98;
-    if(placeholderHeight >= calHeight) {
-      $('#placeholder').height(placeholderHeight);
+    const placeholder = document.getElementById('placeholder');
+    const placeholderHeight = placeholder.offsetHeight - 100;
+    const calHeight = document.getElementById('cal').offsetHeight;
+    if(placeholderHeight <= calHeight) {
+      placeholder.style.height = placeholderHeight+'px';
     }
   }
   render () {

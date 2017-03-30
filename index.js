@@ -6,10 +6,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37,46 +33,46 @@ var Grid = function (_React$Component) {
   _createClass(Grid, [{
     key: 'handlePlaceHolderClick',
     value: function handlePlaceHolderClick(e) {
-      var placeholder = (0, _jquery2.default)('#placeholder');
+      var placeholder = document.getElementById('placeholder');
       var mounted = !this.state.isMounted;
       this.setState({ isMounted: mounted });
       if (mounted) {
-        placeholder.css({ background: 'rgba(91,189,144,0.6)' });
+        placeholder.style.background = 'rgba(91,189,144,0.6)';
       } else {
-        placeholder.css({ background: 'rgba(0, 0, 0, 0.6)' });
+        placeholder.style.background = 'rgba(0, 0, 0, 0.6)';
       }
     }
   }, {
     key: 'handleMouseMove',
     value: function handleMouseMove(e) {
       if (!this.state.isMounted) {
-        var placeholder = (0, _jquery2.default)('#placeholder');
-        placeholder.css({
-          display: 'block',
-          left: (0, _jquery2.default)(e.target).offset().left + 'px',
-          top: (0, _jquery2.default)(e.target).offset().top + 'px',
-          width: (0, _jquery2.default)(e.target).width() + 1 + 'px'
-        });
+        var placeholder = document.getElementById('placeholder');
+        placeholder.style.display = 'block';
+        placeholder.style.left = e.target.offsetLeft + 'px';
+        placeholder.style.top = e.target.offsetTop + 'px';
+        placeholder.style.width = e.target.offsetWidth + 'px';
       }
     }
   }, {
     key: 'handleIncrease',
     value: function handleIncrease(e) {
       e.stopPropagation();
-      var placeholderHeight = (0, _jquery2.default)('#placeholder').height() + 100;
-      var calHeight = (0, _jquery2.default)('#cal').height();
+      var placeholder = document.getElementById('placeholder');
+      var placeholderHeight = placeholder.offsetHeight + 100;
+      var calHeight = document.getElementById('cal').offsetHeight;
       if (placeholderHeight <= calHeight) {
-        (0, _jquery2.default)('#placeholder').height(placeholderHeight);
+        placeholder.style.height = placeholderHeight + 'px';
       }
     }
   }, {
     key: 'handleDecrease',
     value: function handleDecrease(e) {
       e.stopPropagation();
-      var placeholderHeight = (0, _jquery2.default)('#placeholder').height() - 100;
-      var calHeight = 98;
-      if (placeholderHeight >= calHeight) {
-        (0, _jquery2.default)('#placeholder').height(placeholderHeight);
+      var placeholder = document.getElementById('placeholder');
+      var placeholderHeight = placeholder.offsetHeight - 100;
+      var calHeight = document.getElementById('cal').offsetHeight;
+      if (placeholderHeight <= calHeight) {
+        placeholder.style.height = placeholderHeight + 'px';
       }
     }
   }, {
