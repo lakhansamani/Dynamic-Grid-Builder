@@ -11,7 +11,9 @@ class MyComponent extends React.Component {
 	render () {
 		const rows = [1,2,3,4,5];
 		const columns = [1,2,3,4,5];
-		<Grid rows={rows} columns={columns} />
+		return (
+			<Grid rows={rows} columns={columns} />
+		)
 	}
 }
 
