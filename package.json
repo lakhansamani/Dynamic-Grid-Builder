@@ -1,6 +1,6 @@
 {
   "name": "grid-maker",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "dependencies": {
     "babel": "^6.23.0",
     "react": "^15.4.2",
