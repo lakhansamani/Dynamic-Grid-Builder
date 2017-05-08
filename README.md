@@ -18,7 +18,3 @@ class MyComponent extends React.Component {
 }
 
 ```
-
-## Demo
-
-![Demo](./demo/demo.gif)
